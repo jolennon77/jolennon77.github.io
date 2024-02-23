@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 탭 부분 */
+      .tabMenu {
+        width: 600px;
+        height: 420px;
+
+        margin-right: 20px;
+      }
+
+      /* tab 제목 부분 */
+      .tabTitle {
+        height: 49px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+
+      /* tab 제목의 버튼 부분 */
+      .tabTitle button {
+        width: 150px;
+        background-color: inherit; /* 부모것 상속 받기 */
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer; /*마우스 포인터 모얄 */
+        padding: 14px 16px;
+        transition: 0.2s; /* 하나의 스타일이 완전히 다른
+     스타일로 바뀌는 것
+     시간 : 스타일이 바뀌는 시간 
+            초단위
+    */
+        font-size: 17px;
+      }
+      .tabTitle button:hover {
+        /* 마우스 포인터가 올라왔을 때 */
+        background-color: #ddd;
+      }
+      .tabTitle button.active {
+        /* 활성화 되었을 때 */
+        background-color: #ccc;
+      }
+
+      .tabPage {
+        box-sizing: border-box;
+        height: 369px;
+        display: none; /* 숨기기, 자리까지 없어짐 */
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none; /* 윗쪽 테두리 없앰 */
+      }
+      .tablinkInit {
+        display: block;
+      }
+    </style>
+    <script>
+      function openTab(event, inform) {
+        //변수 선언
+        let tabPage, tablinks;
+        tabPage = document.getElementsByClassName("tabPage");
+        tablinks = document.getElementsByClassName("tablinks");
+
+        //클래스가 tabPage인 요소들 가져와서 숨기기
+        for (let i = 0; i < tabPage.length; i++) {
+          tabPage[i].style.display = "none";
+        } //end of for
+
+        //
+        for (let i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        } //end of for'
+
+        document.getElementById(inform).style.display = "block";
+        event.curentarget.className += "active";
+      } //end of openTab
+    </script>
+  </head>
+  <body>
+    <div class="mainInfo">
+      <div class="tabMenu">
+        <div class="tabTitle">
+          <button class="tablinks" onclick="openTab(event,'inform1')">
+            공지사항
+          </button>
+          <button class="tablinks" onclick="openTab(event,'inform2')">
+            문화행사
+          </button>
+          <button class="tablinks" onclick="openTab(event,'inform3')">
+            책바다
+          </button>
+        </div>
+        <div id="inform1" class="tabPage tablinkInit">
+          <h3>공지사항1</h3>
+          <p>즐거운 시간....</p>
+        </div>
+
+        <div id="inform2" class="tabPage">
+          <h3>공지사항2</h3>
+          <p>행복한 시간....</p>
+        </div>
+
+        <div id="inform3" class="tabPage">
+          <h3>공지사항3</h3>
+          <p>기쁜 시간....</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

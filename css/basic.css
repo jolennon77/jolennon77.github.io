@@ -1,0 +1,33 @@
+/*전체 선택자, 페이지에 있는 모든 요소에 대해 스타일 적용*/
+html,body,head,div,span,p,header,nav,section,article,aside,footer,h1,h2,h3,h4,h5,h6,ol,ul,li,a,img,iframe,
+table, thead,tbody,tfoot,tr,th,td,form,input,button,select,textarea,br,label {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  width: 960px; /* 크기는 12로 나누어 떨어지는 값 */
+  margin: 0px auto; /*  위/아래는 0, 왼쪽과 오른쪽은 가운데 */
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* 목록 앞에 기호 없앰 */
+}
+a {
+  text-decoration: none; /* 하이퍼링크 밑줄 없애기 */
+  color: black;
+}
+a:visited {
+  text-decoration: none; /* 하이퍼링크 밑줄 없애기 */
+  color: black;
+}
+img {
+  margin: 0;
+  padding: 0;
+  border: none;
+}

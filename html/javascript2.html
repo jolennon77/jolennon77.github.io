@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //한줄 주석
+      /*
+        여러줄 주석
+        ECMA(유럽컴퓨터제조협회)에서 자바스크립트를 ECMAScript라는 이름으로 표준화
+        ECMAScript(자바스크립트) : 브라우저 안에서 실행되는 프로그래밍 언어(객체지향 프로그래밍 언어)
+        ECMAScript 6
+
+        간단하게 메시지 출력
+            1) alert(실행할 문장); // 실행문장의 끝인 ;(세미콜론)은 생략가능
+            2) console.log(실행 문장) // 콘솔에서 확인
+            3) document.write(실행 문장) //브라우저 본문에 표시
+
+        */
+
+      alert("하윙타임~");
+      console.log("하윙타임~");
+      document.write("<h1>아으 졸려티비~</h1>");
+
+      //숫자 -number, 문자열 -string, 불린 -boolean: true, false
+      // false = 0;, trye = 1;(0이외의 숫자)
+      // 비교연산자: >, >=, <, <=, ==, !=
+      // == 값이 같은지만 비교
+      // === 값과 자료형까지 같은지 비교
+      // != 같지 않다. 값만 비교
+      // !== 값과 타입이 같지 않다.
+
+      //변수와 상수
+      /*1. 변수 선언
+        var : 변수를중복해서 선언가능, 변수가 속하는 범위가 애매함
+            var result = 3;
+            var resilt = 7; => 가능 result의 마지막에는 이 담김
+        let : 중복해서 선어할 수 없음, 변수 범위가 명확({})
+            let test = 3;
+            let test = 7; => 불가능 중복 선언 안됨
+        const : 값이 한번 정해지면 절대 변하지 않음, 상수
+            const 상수이름 = 값
+            const PI = 3.141592;
+       */
+
+      // prompt(메세지); => 키보드로부터 입력 받기, 문자열로 입력 받음
+
+      //숫자를 입력 받아서 홀/짝수 판별
+      let inputNum = Number(prompt("정수를 입력하세요"));
+      let result;
+
+      if (inputNum % 2 === 0) {
+        result = "짝수";
+      } else {
+        result = "홀수";
+      } //end of if
+
+      alert(result);
+      console.log(result);
+      document.write(result);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,52 @@
+@charset "UTF-8"; /* 인코딩으로 인해 발생할 수 있는 문자 깨짐 방지 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, a, big, cite, code,
+ em, img, ins, q, s, small, strike, strong, sub, sup,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+    /*background:transparent; */
+}
+
+body{
+line-height:1;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{ 
+display:block;
+}
+
+ol, ul, li{
+list-style:none;
+}
+
+a{
+margin:0;
+padding:0;
+font-size:100%;
+text-decoration:none;
+vertical-align:baseline;
+color:#000000;
+background:transparent;
+}
+
+img{
+vertical-align:top; /* 이미지 사이의 간격을 없앰 */
+}
+
+table{ /* 테이블의 테두리 사이 간격 없앰 */
+border-collapse:collapse;  
+border-spacing:0;
+}
+
