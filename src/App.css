@@ -1,0 +1,17 @@
+/* src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #007aff; /* MacOS default background color */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url('../public/img/mac-wallpaper.png');
+  background-size: cover;
+}
