@@ -35,7 +35,6 @@ align-items: stretch;
   animation: ${fadeIn} 1s ease-out;
   padding: 20px;
   @media (max-width: 768px) {
-    height: 50vh;
     padding: 10px;
   }
 `;
