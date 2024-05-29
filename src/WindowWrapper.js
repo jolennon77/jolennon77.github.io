@@ -1,4 +1,3 @@
-// src/WindowWrapper.js
 import React from 'react';
 import styled from 'styled-components';
 
@@ -17,6 +16,11 @@ const WindowContainer = styled.div`
   flex-direction: column;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  @media (max-width: 768px) {
+    top: 0;
+    width: 100%;
+    height: 88%;
+  }
 `;
 
 const WindowHeader = styled.div`
@@ -31,14 +35,18 @@ const WindowHeader = styled.div`
 const WindowControls = styled.div`
   display: flex;
   gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
 `;
 
 const ControlButton = styled.button`
   width: 12px;
   height: 12px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  flex-shrink: 0;
 `;
 
 const CloseButton = styled(ControlButton)`
@@ -54,13 +62,15 @@ const MaximizeButton = styled(ControlButton)`
 `;
 
 const MenuBar = styled.div`
-  
   display: flex;
   background-color: #353535;
   padding: 2px 10px;
   border-bottom: 1px solid #353535;
   font-size: 14px;
   user-select: none;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const MenuItem = styled.div`
@@ -102,6 +112,9 @@ const AddressBar = styled.input`
   font-size: 14px;
   color: white;
   background-color: #262626;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const WindowContent = styled.div`
@@ -109,6 +122,9 @@ const WindowContent = styled.div`
   padding: 10px;
   background-color: #22252b;
   overflow: auto;
+  @media (max-width: 768px) {
+    padding: 5px;
+  }
 `;
 
 const WindowWrapper = ({ children, onClose }) => {

@@ -2,7 +2,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import profile from './icon/profile.png';
-// import icon_16 from './icon/16.png';
 import github from './icon/github.png';
 import velog from './icon/velog.png';
 import notion from './icon/notion.png';
@@ -18,11 +17,18 @@ const DockWrapper = styled.div`
   border-radius: 25px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
+  @media (max-width: 768px) {
+    padding: 10px 0;
+    bottom: 10px;
+    width: 90%;
+  }
 `;
 
 const DockContainer = styled.div`
   display: flex;
   align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;  // flex-wrap 속성 제거
 `;
 
 const DockIcon = styled.div`
@@ -33,6 +39,9 @@ const DockIcon = styled.div`
   margin: 0 20px;
   cursor: pointer;
   transition: transform 0.2s;
+  @media (max-width: 768px) {
+    margin: 0 5px;
+  }
 
   &:hover {
     transform: scale(1.2) translateY(-30%);
@@ -41,26 +50,37 @@ const DockIcon = styled.div`
   &:hover span {
     opacity: 1;
     transform: translateY(-120px);
+    @media (max-width: 768px) {
+      transform: translateY(0px);
+    }
   }
 `;
 
 const IconImage = styled.img`
-  width: 192px;
-  height: 192px;
+  width: 128px;
+  height: 128px;
+  @media (max-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 const IconLabel = styled.span`
   position: absolute;
-  bottom: 80px; /* Adjusted to avoid overlap */
+  bottom: 80px;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 2px 8px;
   border-radius: 5px;
-  font-size: 2rem;
+  font-size: 1rem;
   white-space: nowrap;
   opacity: 0;
   transform: translateY(0);
   transition: all 0.2s;
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+    bottom: 60px;
+  }
 `;
 
 const icons = [

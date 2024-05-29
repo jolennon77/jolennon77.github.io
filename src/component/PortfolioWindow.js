@@ -54,6 +54,7 @@ const LargeProfileImage = styled.img`
 
 const HeroText = styled(Typography)`
   margin-top: 20px;
+  
 `;
 
 const ContentSection = styled.div`
@@ -86,7 +87,7 @@ const PortfolioWindow = ({ onClose }) => {
               <HeroText variant="h3">About me</HeroText>
             </ProfileInfo>
             <FlexContainer>
-              <LargeProfileImage alt="Jane Doe" src="/img/profileimg.jpeg" />
+              <LargeProfileImage alt="조현진" src="/img/profileimg.jpeg" />
               <ProfileInfo>
                 <HeroText variant="h3">조현진</HeroText>
                 <HeroText variant="h5">Full Stack Developer</HeroText>
