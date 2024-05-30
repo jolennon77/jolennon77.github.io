@@ -1,10 +1,12 @@
 // src/App.js
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import ProfileWindow from './component/ProfileWindow';
 import PortfolioWindow from './component/PortfolioWindow';
+import PortfolioDetail from './component/PortfolioDetail';
 import Dock from './Dock';
 import './App.css';
 import './animations.css'; // 애니메이션 스타일을 포함할 CSS 파일
@@ -41,28 +43,32 @@ const App = () => {
         paper: '#1e1e1e',
       },
     },
-
   });
 
   return (
-      <div className="App">
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-        <TransitionGroup>
-          {openWindow && (
+    <div className="App">
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Router>
+          <TransitionGroup>
+            {openWindow && (
               <CSSTransition
-                  key={openWindow}
-                  timeout={300}
-                  classNames="fade"
-                  unmountOnExit
+                key={openWindow}
+                timeout={300}
+                classNames="fade"
+                unmountOnExit
               >
                 {renderWindow()}
               </CSSTransition>
-          )}
-        </TransitionGroup>
-        <Dock onOpenWindow={handleOpenWindow} />
-        </ThemeProvider>
-      </div>
+            )}
+          </TransitionGroup>
+          <Dock onOpenWindow={handleOpenWindow} />
+          <Routes>
+            <Route path="/portfolio/:id" element={<PortfolioDetail />} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    </div>
   );
 };
 
