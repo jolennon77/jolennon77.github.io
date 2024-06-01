@@ -35,7 +35,7 @@ const ProjectDatas = {
       badgeColor: "#FF9800",
       detailedContent: "날씨기반 의상추천에 대한 상세 내용입니다.",
       role: "혼자함",
-      technologies: ["React", "Git"],
+      technologies: ["React", "Git", "JavaScript"],
       duration: "1 months",
       team: "1 members",
       youtube: "https://www.youtube.com/embed/11cta61wi0g?si=4-Gj0rFj3zXy4Su-"
@@ -61,7 +61,7 @@ const ProjectDatas = {
       badgeColor: "#FF9800",
       detailedContent: "개인 홈페이지에 대한 상세 내용입니다.",
       role: "혼자함",
-      technologies: ["React", "Git"],
+      technologies: ["React", "Git", "JavaScript"],
       duration: "1 month",
       team: "1 member",
       youtube: "https://www.youtube.com/embed/11cta61wi0g?si=4-Gj0rFj3zXy4Su-"

@@ -55,7 +55,7 @@ const CardHeader = styled.div`
 `;
 
 const BackgroundImageSection = styled.div`
-  background-image: url('/img/portfolio/000036.jpg'); /* Update with your image path */
+  background-image: url('/img/portfolio/ppbg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
