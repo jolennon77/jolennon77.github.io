@@ -13,11 +13,17 @@ export const WindowProvider = ({ children }) => {
   const [previousWindows, setPreviousWindows] = useState([]);
 
   const handleOpenWindow = (windowName) => {
-    if (openWindow || openProject) {
-      setPreviousWindows([...previousWindows, { openWindow, openProject }]);
+    if (openWindow === windowName) {
+      setOpenWindow(null);
+      setOpenProject(null);
+      setPreviousWindows([]);
+    } else {
+      if (openWindow || openProject) {
+        setPreviousWindows([...previousWindows, { openWindow, openProject }]);
+      }
+      setOpenWindow(windowName);
+      setOpenProject(null);
     }
-    setOpenWindow(windowName);
-    setOpenProject(null);
   };
 
   const handleOpenProject = (projectId) => {

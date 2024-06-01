@@ -1,3 +1,4 @@
+// src/component/ProfileWindow.js
 import React from 'react';
 import WindowWrapper from "../WindowWrapper";
 import styled, { keyframes } from 'styled-components';
@@ -8,10 +9,7 @@ import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
-
-import { SiJavascript, SiHtml5, SiCss3, SiSpring, SiSpringboot, SiRedux, SiMysql, SiMongodb, SiAmazonaws, SiDocker } from "react-icons/si";
-import { FaGitAlt, FaNode } from "react-icons/fa";
-import { RiReactjsLine, RiJavaLine } from "react-icons/ri";
+import TechChipDatas from '../TechChipDatas'; // Import the tech chip data
 
 const fadeIn = keyframes`
   from {
@@ -27,8 +25,7 @@ const fadeIn = keyframes`
 const HeroSection = styled.div`
   display: flex; 
   flex-direction: column;
-align-items: stretch;
-  //height: 40vh;
+  align-items: stretch;
   background: url('/img/profilebg.jpeg') center/cover no-repeat;
   text-align: left;
   color: white;
@@ -56,7 +53,6 @@ const LargeProfileImage = styled.img`
   width: 250px;
   height: 300px;
   border: 5px solid #545454;
-  //border-radius: 50%;
   object-fit: cover;
   @media (max-width: 768px) {
     width: 120px;
@@ -72,7 +68,7 @@ const HeroText = styled(Typography)`
 `;
 
 const ContentSection = styled.div`
-  padding: 40px;
+  padding: 0 40px;
   background: ${({ theme }) => theme.palette.background.default};
   @media (max-width: 768px) {
     padding: 20px;
@@ -161,30 +157,15 @@ const ProfileWindow = ({ onClose }) => {
                         Technical Skills
                       </Typography>
                       <Grid container spacing={2}>
-                        {[
-                          { label: "Java", icon: <RiJavaLine />, color: "primary" },
-                          { label: "JavaScript", icon: <SiJavascript />, color: "secondary" },
-                          { label: "HTML5", icon: <SiHtml5 />, color: "secondary" },
-                          { label: "React", icon: <RiReactjsLine />, color: "secondary" },
-                          { label: "Node.js", icon: <FaNode />, color: "primary" },
-                          { label: "CSS", icon: <SiCss3 />, color: "secondary" },
-                          { label: "Git", icon: <FaGitAlt />, style: { backgroundColor: '#9C27B0' } },
-                          { label: "Spring", icon: <SiSpring />, color: "primary" },
-                          { label: "SpringBoot", icon: <SiSpringboot />, color: "primary" },
-                          { label: "Redux", icon: <SiRedux />, color: "secondary" },
-                          { label: "MySQL", icon: <SiMysql />, style: { backgroundColor: '#007396' } },
-                          { label: "MongoDB", icon: <SiMongodb />, style: { backgroundColor: '#007396' } },
-                          { label: "AWS", icon: <SiAmazonaws />, style: { backgroundColor: '#FF9800' } },
-                          { label: "Docker", icon: <SiDocker />, style: { backgroundColor: '#FF9800' } }
-                        ].map((skill, index) => (
-                            <Grid item key={index}>
-                              <StyledChip
-                                  label={skill.label}
-                                  icon={skill.icon}
-                                  color={skill.color || "default"}
-                                  sx={skill.style || {}}
-                              />
-                            </Grid>
+                        {TechChipDatas.map((skill, index) => (
+                          <Grid item key={index}>
+                            <StyledChip
+                              label={skill.label}
+                              icon={skill.icon}
+                              color={skill.color || "default"}
+                              sx={skill.style || {}}
+                            />
+                          </Grid>
                         ))}
                       </Grid>
                     </CardContent>
@@ -229,10 +210,10 @@ const ProfileWindow = ({ onClose }) => {
                         💼 Experience
                       </Typography>
                       <Typography variant="body1" component="p">
-                        - 푸르덴셜 생명보험
+                        - 푸르덴셜 생명보험 (2018.04.2018.10)
                       </Typography>
                       <Typography variant="body1" component="p">
-                        - 한양대학교 ERICA 경영학부 (2010.03 - 2018.08)
+                        - 쿠팡이츠서비스 Engagement (2021.07 - 2023.07)
                       </Typography>
                     </CardContent>
                   </InfoCard>

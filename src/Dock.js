@@ -49,9 +49,9 @@ const DockIcon = styled.div`
 
   &:hover span {
     opacity: 1;
-    transform: translateY(-120px);
+    transform: translateY(-80px);
     @media (max-width: 768px) {
-      transform: translateY(0px);
+      transform: translateY(-40px);
     }
   }
 `;
@@ -67,19 +67,32 @@ const IconImage = styled.img`
 
 const IconLabel = styled.span`
   position: absolute;
-  bottom: 80px;
+  bottom: 65px;
   background: rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 2px 8px;
+  padding: 5px 10px;
   border-radius: 5px;
   font-size: 1rem;
   white-space: nowrap;
   opacity: 0;
   transform: translateY(0);
   transition: all 0.2s;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
+  }
   @media (max-width: 768px) {
     font-size: 0.75rem;
-    bottom: 60px;
+    bottom: 20px;
+    &:after {
+      bottom: -10px;
+    }
   }
 `;
 
