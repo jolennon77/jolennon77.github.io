@@ -102,12 +102,12 @@ const StyledChip = styled(Chip)`
   }
 `;
 
-const ProfileWindow = ({ onClose }) => {
+const ProfileWindow = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-      <WindowWrapper onClose={onClose}>
+    <WindowWrapper address="https://www.profile.com" >
         <>
           <MainContentSection>
             <HeroSection>

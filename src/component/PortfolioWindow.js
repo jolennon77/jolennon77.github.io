@@ -80,7 +80,7 @@ const PortfolioWindow = () => {
   };
 
   return (
-    <WindowWrapper>
+    <WindowWrapper address="https://www.portfolio.com" >
       <>
         <BackgroundImageSection>
           <BackgroundText variant={isMobile ? 'h3' : 'h1'}

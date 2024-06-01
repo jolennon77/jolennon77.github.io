@@ -129,7 +129,7 @@ const WindowContent = styled.div`
   }
 `;
 
-const WindowWrapper = ({ children }) => {
+const WindowWrapper = ({ children, address }) => {
   const { handleGoBack, handleCloseWindow } = useWindow();
 
   return (
@@ -153,7 +153,7 @@ const WindowWrapper = ({ children }) => {
         <NavButton onClick={handleGoBack}>{'<'}</NavButton>
         <NavButton disabled>{'>'}</NavButton>
         <NavButton>{'🔄'}</NavButton>
-        <AddressBar defaultValue="https://www.profile.com" />
+        <AddressBar defaultValue={address} />
       </NavBar>
       <WindowContent>
         {children}

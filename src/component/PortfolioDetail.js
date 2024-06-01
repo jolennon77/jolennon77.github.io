@@ -75,7 +75,7 @@ const PortfolioDetail = ({ projectId }) => {
   );
 
   return (
-    <WindowWrapper>
+    <WindowWrapper address={`https://www.portfolio.com/${project.title}`}>
       <>
         <MainContentSection>
           <BackgroundImageSection image={project.image}>
