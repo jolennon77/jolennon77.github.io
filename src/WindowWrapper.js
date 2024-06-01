@@ -1,5 +1,7 @@
+// src/WindowWrapper.js
 import React from 'react';
 import styled from 'styled-components';
+import { useWindow } from './WindowContext';
 
 const WindowContainer = styled.div`
   position: absolute;
@@ -96,7 +98,7 @@ const NavButton = styled.button`
   font-size: 16px;
   margin-right: 5px;
   cursor: pointer;
-  color: #007aff;
+  color: #a8a8a8;
 
   &:disabled {
     color: #a8a8a8;
@@ -127,34 +129,36 @@ const WindowContent = styled.div`
   }
 `;
 
-const WindowWrapper = ({ children, onClose }) => {
+const WindowWrapper = ({ children }) => {
+  const { handleGoBack, handleCloseWindow } = useWindow();
+
   return (
-      <WindowContainer>
-        <WindowHeader>
-          <WindowControls>
-            <CloseButton onClick={onClose} />
-            <MinimizeButton />
-            <MaximizeButton />
-          </WindowControls>
-        </WindowHeader>
-        <MenuBar>
-          <MenuItem>File</MenuItem>
-          <MenuItem>Edit</MenuItem>
-          <MenuItem>View</MenuItem>
-          <MenuItem>Favorites</MenuItem>
-          <MenuItem>Tools</MenuItem>
-          <MenuItem>Help</MenuItem>
-        </MenuBar>
-        <NavBar>
-          <NavButton disabled>{'<'}</NavButton>
-          <NavButton disabled>{'>'}</NavButton>
-          <NavButton>{'🔄'}</NavButton>
-          <AddressBar defaultValue="https://www.profile.com" />
-        </NavBar>
-        <WindowContent>
-          {children}
-        </WindowContent>
-      </WindowContainer>
+    <WindowContainer>
+      <WindowHeader>
+        <WindowControls>
+          <CloseButton onClick={handleCloseWindow} />
+          <MinimizeButton />
+          <MaximizeButton />
+        </WindowControls>
+      </WindowHeader>
+      <MenuBar>
+        <MenuItem>File</MenuItem>
+        <MenuItem>Edit</MenuItem>
+        <MenuItem>View</MenuItem>
+        <MenuItem>Favorites</MenuItem>
+        <MenuItem>Tools</MenuItem>
+        <MenuItem>Help</MenuItem>
+      </MenuBar>
+      <NavBar>
+        <NavButton onClick={handleGoBack}>{'<'}</NavButton>
+        <NavButton disabled>{'>'}</NavButton>
+        <NavButton>{'🔄'}</NavButton>
+        <AddressBar defaultValue="https://www.profile.com" />
+      </NavBar>
+      <WindowContent>
+        {children}
+      </WindowContent>
+    </WindowContainer>
   );
 };
 

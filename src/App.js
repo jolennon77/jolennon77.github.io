@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -8,22 +8,23 @@ import ProfileWindow from './component/ProfileWindow';
 import PortfolioWindow from './component/PortfolioWindow';
 import PortfolioDetail from './component/PortfolioDetail';
 import Dock from './Dock';
+import { WindowProvider, useWindow } from './WindowContext';
 import './App.css';
 import './animations.css'; // 애니메이션 스타일을 포함할 CSS 파일
 
-const App = () => {
-  const [openWindow, setOpenWindow] = useState(null);
-
-  const handleOpenWindow = (windowName) => {
-    setOpenWindow((prevWindowName) => (prevWindowName === windowName ? null : windowName));
-  };
+const AppContent = () => {
+  const { openWindow, openProject } = useWindow();
 
   const renderWindow = () => {
+    if (openProject) {
+      return <PortfolioDetail projectId={openProject} />;
+    }
+
     switch (openWindow) {
       case 'profile':
-        return <ProfileWindow onClose={() => setOpenWindow(null)} />;
+        return <ProfileWindow />;
       case 'portfolio':
-        return <PortfolioWindow onClose={() => setOpenWindow(null)} />;
+        return <PortfolioWindow />;
       default:
         return null;
     }
@@ -33,10 +34,10 @@ const App = () => {
     palette: {
       mode: 'dark',
       primary: {
-        main: '#2196F3', //백
+        main: '#2196F3',
       },
       secondary: {
-        main: '#dc004e', // 프론트
+        main: '#dc004e',
       },
       background: {
         default: '#121212',
@@ -46,30 +47,30 @@ const App = () => {
   });
 
   return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Router>
-          <TransitionGroup>
-            {openWindow && (
-              <CSSTransition
-                key={openWindow}
-                timeout={300}
-                classNames="fade"
-                unmountOnExit
-              >
-                {renderWindow()}
-              </CSSTransition>
-            )}
-          </TransitionGroup>
-          <Dock onOpenWindow={handleOpenWindow} />
-          <Routes>
-            <Route path="/portfolio/:id" element={<PortfolioDetail />} />
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <div className="App">
+        <TransitionGroup>
+          {openWindow && (
+            <CSSTransition key={openWindow} timeout={300} classNames="fade" unmountOnExit>
+              {renderWindow()}
+            </CSSTransition>
+          )}
+        </TransitionGroup>
+        <Dock />
+      </div>
+    </ThemeProvider>
   );
 };
+
+const App = () => (
+  <WindowProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AppContent />} />
+      </Routes>
+    </Router>
+  </WindowProvider>
+);
 
 export default App;

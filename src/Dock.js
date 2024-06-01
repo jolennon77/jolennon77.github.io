@@ -1,6 +1,7 @@
 // src/Dock.js
 import React from 'react';
 import styled from 'styled-components';
+import { useWindow } from './WindowContext';
 import profile from './icon/profile.png';
 import github from './icon/github.png';
 import velog from './icon/velog.png';
@@ -28,7 +29,6 @@ const DockContainer = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  flex-wrap: nowrap;  // flex-wrap 속성 제거
 `;
 
 const DockIcon = styled.div`
@@ -91,26 +91,28 @@ const icons = [
   { src: notion, alt: 'Notion', url: 'https://www.notion.so/Hi-I-m-HJ-25a87b9cce5046f5a44f107e4212c22d' },
 ];
 
-const Dock = ({ onOpenWindow }) => {
+const Dock = () => {
+  const { handleOpenWindow } = useWindow();
+
   const handleClick = (icon) => {
     if (icon.window) {
-      onOpenWindow(icon.window);
+      handleOpenWindow(icon.window);
     } else if (icon.url) {
       window.open(icon.url, '_blank', 'noopener,noreferrer');
     }
   };
 
   return (
-      <DockWrapper>
-        <DockContainer>
-          {icons.map((icon, index) => (
-              <DockIcon key={index} onClick={() => handleClick(icon)}>
-                <IconImage src={icon.src} alt={icon.alt} />
-                <IconLabel>{icon.alt}</IconLabel>
-              </DockIcon>
-          ))}
-        </DockContainer>
-      </DockWrapper>
+    <DockWrapper>
+      <DockContainer>
+        {icons.map((icon, index) => (
+          <DockIcon key={index} onClick={() => handleClick(icon)}>
+            <IconImage src={icon.src} alt={icon.alt} />
+            <IconLabel>{icon.alt}</IconLabel>
+          </DockIcon>
+        ))}
+      </DockContainer>
+    </DockWrapper>
   );
 };
 

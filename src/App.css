@@ -14,4 +14,6 @@ body {
   align-items: center;
   background-image: url('../public/img/mac-wallpaper.png');
   background-size: cover;
+  background-position: center;
 }
+

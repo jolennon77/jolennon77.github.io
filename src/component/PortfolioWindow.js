@@ -1,6 +1,6 @@
 // src/component/PortfolioWindow.js
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useWindow } from '../WindowContext';
 import WindowWrapper from "../WindowWrapper";
 import styled, { keyframes } from 'styled-components';
 import Typography from '@mui/material/Typography';
@@ -71,10 +71,10 @@ const BackgroundText = styled(Typography)`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 `;
 
-const PortfolioWindow = ({ onClose }) => {
+const PortfolioWindow = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const navigate = useNavigate();
+  const { handleOpenProject } = useWindow();
 
   const portfolioItems = [
     { title: "가챠", image: "/img/portfolio/1.png", id: "project1", content: "쇼핑몰 관리자페이지", badge: "기업" },
@@ -82,16 +82,16 @@ const PortfolioWindow = ({ onClose }) => {
     { title: "룩복", image: "/img/portfolio/3.png", id: "project3", content: "날씨기반 의상추천", badge: "학원" },
     { title: "야숨", image: "/img/portfolio/4.png", id: "project4", content: "날씨기반 캠핑장추천", badge: "사이드" },
     { title: "개인 홈페이지", image: "/img/portfolio/5.png", id: "project5", content: "개인 홈페이지", badge: "기업" },
-    { title: "4차", image: "/img/portfolio/5.png", id: "project5", content: "", badge: "기업" },
+    { title: "4차", image: "/img/portfolio/5.png", id: "project6", content: "", badge: "기업" },
     // Add more projects as needed
   ];
 
   const handleCardClick = (id) => {
-    navigate(`/portfolio/${id}`);
+    handleOpenProject(id);
   };
 
   return (
-    <WindowWrapper onClose={onClose}>
+    <WindowWrapper>
       <>
         <BackgroundImageSection>
           <BackgroundText variant={isMobile ? 'h3' : 'h1'}>
