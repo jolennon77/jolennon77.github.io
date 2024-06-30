@@ -1,5 +1,4 @@
-// src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -7,13 +6,25 @@ import CssBaseline from '@mui/material/CssBaseline';
 import ProfileWindow from './component/ProfileWindow';
 import PortfolioWindow from './component/PortfolioWindow';
 import PortfolioDetail from './component/PortfolioDetail';
-import Dock from './Dock';
-import { WindowProvider, useWindow } from './WindowContext';
+import Dock from './common/Dock';
+import { WindowProvider, useWindow } from './common/WindowContext';
 import './App.css';
-import './animations.css'; // 애니메이션 스타일을 포함할 CSS 파일
+import './common/animations.css'; // 애니메이션 스타일을 포함할 CSS 파일
+
+import DesktopIcon from './common/DesktopIcon';
+import EasterEggVideo from './common/EasterEggVideo';
 
 const AppContent = () => {
   const { openWindow, openProject } = useWindow();
+  const [activeEasterEgg, setActiveEasterEgg] = useState(null);
+
+  const handleIconClick = (easterEgg) => {
+    setActiveEasterEgg(easterEgg);
+  };
+
+  const handleCloseEasterEgg = () => {
+    setActiveEasterEgg(null);
+  };
 
   const renderWindow = () => {
     if (openProject) {
@@ -47,30 +58,44 @@ const AppContent = () => {
   });
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <div className="App">
-        <TransitionGroup>
-          {openWindow && (
-            <CSSTransition key={openWindow} timeout={300} classNames="fade" unmountOnExit>
-              {renderWindow()}
-            </CSSTransition>
-          )}
-        </TransitionGroup>
-        <Dock />
-      </div>
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="App">
+          <TransitionGroup>
+            {openWindow && (
+                <CSSTransition key={openWindow} timeout={300} classNames="fade" unmountOnExit>
+                  {renderWindow()}
+                </CSSTransition>
+            )}
+          </TransitionGroup>
+          <Dock />
+          <div className="IconWrapper">
+            <DesktopIcon
+                icon="/easterEgg/MT.png"
+                label="Mutsuki Dance"
+                onClick={() => handleIconClick('easterEgg1')}
+            />
+            {/*<DesktopIcon*/}
+            {/*    icon="/path/to/your/icon2.png"*/}
+            {/*    label="Easter Egg 2"*/}
+            {/*    onClick={() => handleIconClick('easterEgg2')}*/}
+            {/*/>*/}
+          </div>
+          {activeEasterEgg === 'easterEgg1' && <EasterEggVideo onClose={handleCloseEasterEgg} />}
+          {/*{activeEasterEgg === 'easterEgg2' && <EasterEggVideo onClose={handleCloseEasterEgg} />}*/}
+        </div>
+      </ThemeProvider>
   );
 };
 
 const App = () => (
-  <WindowProvider>
-    <Router>
-      <Routes>
-        <Route path="/" element={<AppContent />} />
-      </Routes>
-    </Router>
-  </WindowProvider>
+    <WindowProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<AppContent />} />
+        </Routes>
+      </Router>
+    </WindowProvider>
 );
 
 export default App;

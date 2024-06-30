@@ -1,6 +1,6 @@
 // src/component/ProfileWindow.js
 import React from "react";
-import WindowWrapper from "../WindowWrapper";
+import WindowWrapper from "../common/WindowWrapper";
 import styled, { keyframes } from "styled-components";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
@@ -10,7 +10,7 @@ import Chip from "@mui/material/Chip";
 import Link from "@mui/material/Link"; // Import Link from MUI
 import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
-import TechChipDatas from "../TechChipDatas"; // Import the tech chip data
+import TechChipDatas from "../data/TechChipDatas"; // Import the tech chip data
 import { FaGithub } from "react-icons/fa";
 import { SiVelog, SiNotion } from "react-icons/si";
 import { styled as muiStyled } from "@mui/material/styles";

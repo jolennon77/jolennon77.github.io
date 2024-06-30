@@ -1,7 +1,7 @@
 // src/component/PortfolioWindow.js
 import React from 'react';
-import { useWindow } from '../WindowContext';
-import WindowWrapper from "../WindowWrapper";
+import { useWindow } from '../common/WindowContext';
+import WindowWrapper from "../common/WindowWrapper";
 import styled, { keyframes } from 'styled-components';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
@@ -11,7 +11,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import Chip from '@mui/material/Chip';
-import ProjectDatas from '../ProjectDatas'
+import ProjectDatas from '../data/ProjectDatas'
 
 const fadeIn = keyframes`
   from {

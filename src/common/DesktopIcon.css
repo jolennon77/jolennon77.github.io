@@ -1,0 +1,19 @@
+.IconContainer {
+    cursor: pointer;
+    text-align: center;
+    color: white;
+}
+
+.IconContainer:hover {
+    opacity: 0.8;
+}
+
+.IconImage {
+    width: 60px;
+    height: 60px;
+}
+
+.IconLabel {
+    margin-top: 5px;
+    font-size: 14px;
+}

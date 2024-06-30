@@ -1,16 +1,15 @@
-// src/component/PortfolioDetail.js
 import React from "react";
 import styled from "styled-components";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
-import WindowWrapper from "../WindowWrapper";
+import WindowWrapper from "../common/WindowWrapper";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
 import Chip from "@mui/material/Chip";
-import ProjectDatas from "../ProjectDatas"; // Import the project details
-import TechChipDatas from "../TechChipDatas"; // Import the tech chip data
+import ProjectDatas from "../data/ProjectDatas"; // Import the project details
+import TechChipDatas from "../data/TechChipDatas"; // Import the tech chip data
 import { FaGithub } from "react-icons/fa";
 import { BsFiletypePpt } from "react-icons/bs";
 import { styled as muiStyled } from "@mui/material/styles";
