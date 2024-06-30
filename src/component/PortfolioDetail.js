@@ -11,6 +11,10 @@ import Grid from "@mui/material/Grid";
 import Chip from "@mui/material/Chip";
 import ProjectDatas from "../ProjectDatas"; // Import the project details
 import TechChipDatas from "../TechChipDatas"; // Import the tech chip data
+import { FaGithub } from "react-icons/fa";
+import { BsFiletypePpt } from "react-icons/bs";
+import { styled as muiStyled } from "@mui/material/styles";
+import Link from "@mui/material/Link"; // Import Link from MUI
 
 const ContentSection = styled.div`
   padding: 0 40px;
@@ -69,10 +73,24 @@ const PortfolioDetail = ({ projectId }) => {
     return <div>Project not found</div>;
   }
 
-  // 필터링된 기술 스택 칩 데이터
-  const filteredTechChips = TechChipDatas.filter((chip) =>
-    project.technologies.includes(chip.label)
-  );
+  // 기술 스택을 섹션별로 분류
+  const techSections = {
+    backend: project.backend || [],
+    db: project.db || [],
+    frontend: project.frontend || [],
+    server: project.server || [],
+    tool: project.tool || [],
+    collaborations: project.collaborations || [],
+  };
+
+  const StyledLink = muiStyled(Link)`
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
   return (
     <WindowWrapper address={`https://www.portfolio.com/${project.title}`}>
@@ -83,7 +101,7 @@ const PortfolioDetail = ({ projectId }) => {
               variant={isMobile ? "h4" : "h2"}
               sx={{
                 fontWeight: "400",
-                padding: "0 10px"
+                padding: "0 10px",
               }}
             >
               {project.title}
@@ -95,7 +113,7 @@ const PortfolioDetail = ({ projectId }) => {
                 <InfoCard>
                   <CardContent>
                     <Typography variant="h5" component="h3" gutterBottom>
-                    Project Duration
+                      Project Duration
                     </Typography>
                     <Typography variant="body1" component="p">
                       {project.duration}
@@ -107,7 +125,7 @@ const PortfolioDetail = ({ projectId }) => {
                 <InfoCard>
                   <CardContent>
                     <Typography variant="h5" component="h3" gutterBottom>
-                    Team Composition
+                      Team Composition
                     </Typography>
                     <Typography variant="body1" component="p">
                       {project.team}
@@ -119,17 +137,65 @@ const PortfolioDetail = ({ projectId }) => {
                 <InfoCard>
                   <CardContent>
                     <Typography variant="h5" component="h3" gutterBottom>
-                    Tech Stack
+                      Link
+                    </Typography>
+                    {project.gitUrls.map((git, index) => (
+                      <Typography variant="body1" component="p" key={index}>
+                        <FaGithub /> {git.type} :{" "}
+                        <StyledLink
+                          href={git.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {git.url}
+                        </StyledLink>
+                      </Typography>
+                    ))}
+                    {project.pptUrl && project.pptUrl.trim() !== "" && (
+                      <Typography variant="body1" component="p">
+                        <BsFiletypePpt /> PPT :{" "}
+                        <StyledLink
+                          href={project.pptUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          https://www.canva.com
+                        </StyledLink>
+                      </Typography>
+                    )}
+                  </CardContent>
+                </InfoCard>
+              </Grid>
+
+              <Grid item xs={12}>
+                <InfoCard>
+                  <CardContent>
+                    <Typography variant="h5" component="h3" gutterBottom>
+                      Tech Stack
                     </Typography>
                     <Grid container spacing={2}>
-                      {filteredTechChips.map((skill, index) => (
-                        <Grid item key={index}>
-                          <Chip
-                            label={skill.label}
-                            icon={skill.icon}
-                            color={skill.color || "default"}
-                            sx={skill.style || {}}
-                          />
+                      {Object.keys(techSections).map((section, index) => (
+                        <Grid item xs={12} md={6} key={index}>
+                          <Typography variant="h6" component="h4" gutterBottom>
+                            {section.charAt(0).toUpperCase() + section.slice(1)}
+                          </Typography>
+                          <Grid container spacing={1}>
+                            {techSections[section].map((skillLabel, index) => {
+                              const skill = TechChipDatas[section].find(
+                                (tech) => tech.label === skillLabel
+                              );
+                              return (
+                                <Grid item key={index}>
+                                  <Chip
+                                    label={skill.label}
+                                    icon={skill.icon}
+                                    sx={skill.sx || {}}
+                                    color={skill.color || "default"}
+                                  />
+                                </Grid>
+                              );
+                            })}
+                          </Grid>
                         </Grid>
                       ))}
                     </Grid>
@@ -140,10 +206,10 @@ const PortfolioDetail = ({ projectId }) => {
                 <InfoCard>
                   <CardContent>
                     <Typography variant="h5" component="h3" gutterBottom>
-                    Description
+                      Description
                     </Typography>
                     <Typography variant="body1" component="p">
-                    {project.detailedContent}
+                      {project.detailedContent}
                     </Typography>
                   </CardContent>
                 </InfoCard>
@@ -152,10 +218,10 @@ const PortfolioDetail = ({ projectId }) => {
                 <InfoCard>
                   <CardContent>
                     <Typography variant="h5" component="h3" gutterBottom>
-                    Role 
+                      Role
                     </Typography>
                     <Typography variant="body1" component="p">
-                    {project.role}
+                      {project.role}
                     </Typography>
                   </CardContent>
                 </InfoCard>
