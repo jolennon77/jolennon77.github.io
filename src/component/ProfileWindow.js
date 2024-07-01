@@ -14,6 +14,8 @@ import TechChipDatas from "../data/TechChipDatas"; // Import the tech chip data
 import { FaGithub } from "react-icons/fa";
 import { SiVelog, SiNotion } from "react-icons/si";
 import { styled as muiStyled } from "@mui/material/styles";
+import HighlightedText from "../common/HighlightedText";
+import AnswerText from "../common/AnswerText";
 
 const fadeIn = keyframes`
   from {
@@ -125,7 +127,7 @@ const ProfileWindow = () => {
         <MainContentSection>
           <HeroSection>
             <ProfileInfo>
-              <HeroText variant={isMobile ? "h4" : "h3"}>About me</HeroText>
+              <HeroText variant={isMobile ? "h4" : "h3"}>Profile</HeroText>
             </ProfileInfo>
             <FlexContainer>
               <LargeProfileImage alt="조현진" src="/img/profileimg.jpeg" />
@@ -313,6 +315,57 @@ const ProfileWindow = () => {
                   </CardContent>
                 </InfoCard>
               </Grid>
+              <Grid item xs={12}>
+                <InfoCard>
+                  <CardContent>
+                    <Typography variant="h5" component="h3" gutterBottom>
+                      🧑🏻‍💻 About me
+                    </Typography>
+                    <br />
+                    <HighlightedText>
+                      소통의 중요성을 아는 개발자
+                    </HighlightedText>
+                    <AnswerText>
+                    저는 학창시절 다양한 아르바이트와 호주 워킹홀리데이 경험을 통해 소통의 중요성을 배웠습니다. 아르바이트를 하면서 여러 사람들과의 협업과 소통이 업무의 성공에 얼마나 중요한지 깨달았습니다. 또한, 호주 워킹홀리데이 동안 다양한 국적의 사람들과 함께 일하며 언어와 문화의 차이를 극복하고 원활하게 소통하는 방법을 익혔습니다. 이러한 경험은 사회인이 된 이후에도 "소통을 통한 협업"의 중요성을 일깨워 주었습니다. 업무 중에도 동료에게 질문하는 것을 두려워하지 않고, 업무 요청사항이나 전달사항이 정확하게 전달되었는지, 제가 동료의 의도를 정확하게 파악하였는지 항상 확인하였습니다. 이러한 성향 덕분에 재직 중 업무 미스율을 20% 이상 줄일 수 있었습니다. 뿐만 아니라, 업무 요청 피드백에 있어서 '불가하다'라는 답변이 나갈 수밖에 없는 경우에도 단순히 불가하다는 답변을 주는 것이 아니라 가능한 바운더리 내에서 대안을 찾아 제시하는 소통 방법을 사용하였고, 실제로도 업무 효율과 동료 관계에 15% 이상의 긍정적인 영향을 주었습니다.
+                      <br />
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                    <HighlightedText>
+                      수용과 발전을 추구하는 개발자
+                    </HighlightedText>
+                    <AnswerText>
+                    저는 비전공자 출신으로, 이러한 약점을 만회하기 위해 정보처리기사 자격증을 획득하였습니다. 또한 IT 플랫폼 서비스를 제공하는 기업에서의 경험을 통해 마케팅 보조, 데이터 분석, 도출된 데이터 통한 액션(미션) 등 다양한 업무를 수행하였습니다. 예를 들어, 데이터를 분석하여 마케팅 캠페인을 최적화함으로써 고객 전환율을 25% 증가시킨 경험이 있습니다. 이러한 경험은 저의 업무 파악과 해석 능력을 높여주었고, 많은 구성원과의 원활한 커뮤니케이션 능력을 키워주었습니다. 저는 이러한 경험을 바탕으로 개발자로서 빠르게 적응하고, 지속적으로 성장할 수 있는 인재가 될 수 있을 것으로 생각합니다. 특히, 새로운 기술과 트렌드를 수용하고 이를 바탕으로 발전하는 데 주력할 것입니다.
+                      <br />
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                    <HighlightedText>
+                      고객 관점에서 사고하는 개발자
+                    </HighlightedText>
+                    <AnswerText>
+                    대화와 소통을 두려워하지 않는 저의 성향은 자연스럽게 상대방, 즉 "고객 관점에서 사고하기"로 연결되었습니다. 과거 근무 시절, 고객의 니즈를 파악하고 이를 해결하기 위해 다양한 방법을 모색하였습니다. 예를 들어, 배달 서비스의 거절률을 분석하여 최소 단가 고정비를 고정하는 프로모션을 기획하였고, 그 결과 배달 거절률을 8% 줄이는 성과를 거두었습니다. 이러한 경험을 통해 고객의 관점을 이해하고, 이를 바탕으로 문제를 해결하는 능력을 기르게 되었습니다.
+                      <br />
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                    <HighlightedText>
+                    팀원에게 도움이 되는 개발자
+
+                    </HighlightedText>
+                    <AnswerText>
+                    개발자로서 다양한 프로젝트 팀 활동에 참여하면서 협업의 중요성을 깨달았습니다. 프로젝트에서는 팀장, 팀원 역할을 각각 맡아, 웹 애플리케이션 개발 프로젝트를 성공적으로 완료한 경험이 있습니다. 특히, 프로젝트 중간에 발생한 예기치 못한 문제들을 해결하기 위해 팀원들과 적극적으로 소통하며, 문제의 원인을 분석하고 해결책을 모색하였습니다. 예를 들어, 특정 기능 구현 중 성능 문제가 발생했을 때 팀원들과 협력하여 문제를 해결하고 최적화하였습니다. 이로 인해 페이지 로딩 속도가 평균 2.5초에서 1.2초로 개선되었습니다. 또한, 프로젝트 관리 도구(JIRA)를 사용하여 각 팀원의 작업을 체계적으로 관리하고, 주간 회의를 통해 진행 상황을 공유하며 일정 내에 프로젝트를 완료할 수 있었습니다. 결과적으로, 이 프로젝트는 고객 만족도 95% 이상을 기록하며 성공적으로 완료되었습니다.
+                      <br />
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                  </CardContent>
+                </InfoCard>
+              </Grid>
 
               <Grid item xs={12}>
                 <InfoCard>
@@ -320,71 +373,114 @@ const ProfileWindow = () => {
                     <Typography variant="h5" component="h3" gutterBottom>
                       💬 Too Much Information
                     </Typography>
-                    <Typography variant="subtitle1" component="span" fontWeight="bold">
+                    <br />
+                    <HighlightedText>
                       Q. 왜 개발자가 하고 싶다고 생각하셨나요?
-                    </Typography>
-                    <Typography variant="body1" component="p">
-                      A. 어렸을 때부터 레고나 프라모델등 무언가를 만드는 것을 좋아했습니다. <br />
-                      쿠팡이츠서비스에서 근무하면서 제가 엑셀로 만든 매크로나 자동화 시트를 팀원들이 사용하는 것을 보며 뿌듯함을 느꼈고, 함께 협업하던 개발자분들이 저희가 요청한 기능들을 개선하고 추가하는 모습을 보면서 멋있다고 생각하게 되었습니다.  <br />
-                      이러한 경험을 통해 저도 누군가에게 도움이 되는 것을 만들어주는 개발자가 되고 싶다는 결심을 하게 되었습니다.<br />
-                    </Typography>
-                    <br /><hr /> <br />
-                    <Typography variant="subtitle1" component="span" fontWeight="bold">
-                      Q. 성격의 장단점?
-                    </Typography>
-                    <Typography variant="body1" component="p">
+                    </HighlightedText>
+                    <AnswerText>
+                      A. 어렸을 때부터 레고나 프라모델등 무언가를 만드는 것을
+                      좋아했습니다. <br />
+                      쿠팡이츠서비스에서 근무하면서 제가 엑셀로 만든 매크로나
+                      자동화 시트를 팀원들이 사용하는 것을 보며 뿌듯함을 느꼈고,
+                      함께 협업하던 개발자분들이 저희가 요청한 기능들을 개선하고
+                      추가하는 모습을 보면서 멋있다고 생각하게 되었습니다.{" "}
+                      <br />
+                      이러한 경험을 통해 저도 누군가에게 도움이 되는 것을
+                      만들어주는 개발자가 되고 싶다는 결심을 하게 되었습니다.
+                      <br />
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                    <HighlightedText>Q. 성격의 장단점?</HighlightedText>
+                    <AnswerText>
                       A. 장점은 적응력이라고 생각합니다. <br />
-                      새로운 사람들과도 잘 적응하는 성격적인 부분과 새로운 기술, 프로그램들을 빠르게 이해하고 습득할 수 있습니다. <br />
+                      새로운 사람들과도 잘 적응하는 성격적인 부분과 새로운 기술,
+                      프로그램들을 빠르게 이해하고 습득할 수 있습니다. <br />
                       단점으로는 결정이 빠른 편이라고 생각합니다. <br />
-                      프로젝트를 하면서 느꼈던 것인데, 누군가에게는 좀 더 신중한 문제일 수 있는데 현실적인 것에만 몰두하여 빠르게 진행하려는 점이 있는 것 같습니다. <br />
-                      이를 보완하기 위해 중요한 결정을 내릴 때는 팀원들의 의견을 충분히 수렴하고 신중하게 검토하는 습관을 기르려고 노력하고 있습니다.<br />
-                    </Typography>
-                    <br /><hr /> <br />
-                    <Typography variant="subtitle1" component="span" fontWeight="bold">
+                      프로젝트를 하면서 느꼈던 것인데, 누군가에게는 좀 더 신중한
+                      문제일 수 있는데 현실적인 것에만 몰두하여 빠르게
+                      진행하려는 점이 있는 것 같습니다. <br />
+                      이를 보완하기 위해 중요한 결정을 내릴 때는 팀원들의 의견을
+                      충분히 수렴하고 신중하게 검토하는 습관을 기르려고 노력하고
+                      있습니다.
+                      <br />
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                    <HighlightedText>
                       Q. 팀원과 갈등이 생기면 어떻게 해결하는 편인지?
-                    </Typography>
-                    <Typography variant="body1" component="p">
-                      A. 팀원과 갈등이 생기면 우선 상대방의 입장을 이해하려고 노력합니다. <br />
-                      팀원이기전에 하나의 개인이기에 다르게 생각할 수 있다는 열린 마음을 가지려고 노력합니다. <br />
-                      다음으로 우선 문제의 원인을 파악하여 상호 이해를 높이는 것이 중요하다고 생각합니다. <br />
-                      갈등 상황에서는 감정적인 대응을 피하고, 구체적인 사실과 문제 해결에 집중하려고 합니다.<br />
-                    </Typography>
-                    <br /><hr /> <br />
-                    <Typography variant="subtitle1" component="span" fontWeight="bold">
+                    </HighlightedText>
+                    <AnswerText>
+                      A. 팀원과 갈등이 생기면 우선 상대방의 입장을 이해하려고
+                      노력합니다. <br />
+                      팀원이기전에 하나의 개인이기에 다르게 생각할 수 있다는
+                      열린 마음을 가지려고 노력합니다. <br />
+                      다음으로 우선 문제의 원인을 파악하여 상호 이해를 높이는
+                      것이 중요하다고 생각합니다. <br />
+                      갈등 상황에서는 감정적인 대응을 피하고, 구체적인 사실과
+                      문제 해결에 집중하려고 합니다.
+                      <br />
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                    <HighlightedText>
                       Q. 조직 문화에 적응하는 나만의 방법이 있는지?
-                    </Typography>
-                    <Typography variant="body1" component="p">
-                    A. 먼저 인사하고 먼저 다가갑니다.<br />
-                      새로운 환경에 들어가면 먼저 새로운 환경의 업무 방식과 조직의 관습을 이해하려고 노력합니다.<br />
-                      또한, 피드백을 겸허히 받아들이고, 조직의 목표와 가치에 맞춰 제 업무 방식을 조정하는 것도 중요하다고 생각합니다. <br />
-                      이러한 접근 방식을 통해 조직 문화에 빠르게 적응하고, 팀에 기여할 수 있습니다.<br />
-                    </Typography>
-                    <br /><hr /> <br />
-                    <Typography variant="subtitle1" component="span" fontWeight="bold">
+                    </HighlightedText>
+                    <AnswerText>
+                      A. 먼저 인사하고 먼저 다가갑니다.
+                      <br />
+                      새로운 환경에 들어가면 먼저 새로운 환경의 업무 방식과
+                      조직의 관습을 이해하려고 노력합니다.
+                      <br />
+                      또한, 피드백을 겸허히 받아들이고, 조직의 목표와 가치에
+                      맞춰 제 업무 방식을 조정하는 것도 중요하다고 생각합니다.{" "}
+                      <br />
+                      이러한 접근 방식을 통해 조직 문화에 빠르게 적응하고, 팀에
+                      기여할 수 있습니다.
+                      <br />
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                    <HighlightedText>
                       Q. 리더에 가까운지, 팔로워에 가까운지?
-                    </Typography>
-                    <Typography variant="body1" component="p">
-                    A. 현재 저는 팔로워에 가깝다고 생각합니다. 하지만 저의 최종 목표는 좋은 팔로워이자 귀감이 되는 리더가 되는 것입니다. <br />
-                    팔로워로서 팀의 목표를 이해하고 협력하며 배우는 과정에서 많은 경험과 지식을 쌓고 싶습니다. <br />
-                    이러한 경험들은 미래에 리더로서의 자질을 키우는 데 중요한 밑거름이 될 것이라고 믿습니다. <br />
-                    리더가 되기 위해서는 우선 훌륭한 팔로워가 되어야 한다고 생각합니다.<br />
-                    </Typography>
-                    <br /><hr /> <br />
-                    <Typography variant="subtitle1" component="span" fontWeight="bold">
-                      Q. 취미는?
-                    </Typography>
-                    <Typography variant="body1" component="p">
+                    </HighlightedText>
+                    <AnswerText>
+                      A. 현재 저는 팔로워에 가깝다고 생각합니다. 하지만 저의
+                      최종 목표는 좋은 팔로워이자 귀감이 되는 리더가 되는
+                      것입니다. <br />
+                      팔로워로서 팀의 목표를 이해하고 협력하며 배우는 과정에서
+                      많은 경험과 지식을 쌓고 싶습니다. <br />
+                      이러한 경험들은 미래에 리더로서의 자질을 키우는 데 중요한
+                      밑거름이 될 것이라고 믿습니다. <br />
+                      리더가 되기 위해서는 우선 훌륭한 팔로워가 되어야 한다고
+                      생각합니다.
+                      <br />
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                    <HighlightedText>Q. 취미는?</HighlightedText>
+                    <AnswerText>
                       A. 서브컬쳐 문화를 좋아합니다. <br />
-                        하고있는 게임인 니케와 블루아카이브에서 각각 지휘관과 선생님을 즐기고 있습니다.<br />
-                        최근에 빠져있는 애니메이션은 걸즈밴드크라이입니다. 꼭보십쇼.
-                    </Typography>
-                    <br /><hr /> <br />
-                    <Typography variant="subtitle1" component="span" fontWeight="bold">
+                      하고있는 게임인 니케와 블루아카이브에서 각각 지휘관과
+                      선생님을 즐기고 있습니다.
+                      <br />
+                      최근에 빠져있는 애니메이션은 걸즈밴드크라이입니다.
+                      꼭보십쇼.
+                    </AnswerText>
+                    <br />
+                    <br />
+                    <br />
+                    <HighlightedText>
                       Q. 좋아하는 사자성어, 좌우명 등
-                    </Typography>
-                    <Typography variant="body1" component="p">
+                    </HighlightedText>
+                    <AnswerText>
                       A. 마음을 불태워라. - 렌고쿠 쿄쥬로 향년 20세
-                    </Typography>
+                    </AnswerText>
                   </CardContent>
                 </InfoCard>
               </Grid>
