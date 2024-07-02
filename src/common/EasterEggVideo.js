@@ -1,15 +1,13 @@
 import React, { useRef, useEffect } from 'react';
 
-const EasterEggVideo = ({ onClose }) => {
+const EasterEggVideo = ({ onClose, videoSrc }) => {
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
-    const audioRef = useRef(null);
 
     useEffect(() => {
         const video = videoRef.current;
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
-        const audio = audioRef.current;
 
         const renderFrame = () => {
             if (video.paused || video.ended) {
@@ -24,7 +22,7 @@ const EasterEggVideo = ({ onClose }) => {
             const greenR = 13;
             const greenG = 235;
             const greenB = 53;
-            const sensitivity = 150;
+            const sensitivity = 160;
 
             for (let i = 0; i < data.length; i += 4) {
                 const red = data[i];
@@ -49,7 +47,6 @@ const EasterEggVideo = ({ onClose }) => {
         video.addEventListener('play', () => {
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
-
             renderFrame();
         });
 
@@ -69,7 +66,7 @@ const EasterEggVideo = ({ onClose }) => {
             <div style={styles.container}>
                 <canvas ref={canvasRef} style={styles.video} />
                 <video ref={videoRef} style={styles.hiddenVideo} controls autoPlay onEnded={onClose}>
-                    <source src="/easterEgg/Mutsuki_Dance.mp4" type="video/mp4" />
+                    <source src={videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>

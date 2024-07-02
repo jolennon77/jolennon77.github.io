@@ -75,14 +75,24 @@ const AppContent = () => {
                 label="Mutsuki Dance"
                 onClick={() => handleIconClick('easterEgg1')}
             />
-            {/*<DesktopIcon*/}
-            {/*    icon="/path/to/your/icon2.png"*/}
-            {/*    label="Easter Egg 2"*/}
-            {/*    onClick={() => handleIconClick('easterEgg2')}*/}
-            {/*/>*/}
+            <DesktopIcon
+                icon="/easterEgg/toki.png"
+                label="Pyon Pyon"
+                onClick={() => handleIconClick('easterEgg2')}
+            />
           </div>
-          {activeEasterEgg === 'easterEgg1' && <EasterEggVideo onClose={handleCloseEasterEgg} />}
-          {/*{activeEasterEgg === 'easterEgg2' && <EasterEggVideo onClose={handleCloseEasterEgg} />}*/}
+          {activeEasterEgg === 'easterEgg1' && (
+              <EasterEggVideo
+                  onClose={handleCloseEasterEgg}
+                  videoSrc="/easterEgg/Mutsuki_Dance.mp4"
+              />
+          )}
+          {activeEasterEgg === 'easterEgg2' && (
+              <EasterEggVideo
+                  onClose={handleCloseEasterEgg}
+                  videoSrc="/easterEgg/toki.mp4"
+              />
+          )}
         </div>
       </ThemeProvider>
   );
