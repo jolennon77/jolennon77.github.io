@@ -41,7 +41,7 @@ const ProjectDatas = {
     collaborations: ["Git"],
     duration: "1 months",
     team: "1 members",
-    youtube: "https://www.youtube.com/embed/11cta61wi0g?si=4-Gj0rFj3zXy4Su-"
+    youtube: "https://www.youtube.com/embed/FRC9oUOjYI8?si=KuzkM8KJW6u388h5"
   },
   project3: {
     title: "룩복",
