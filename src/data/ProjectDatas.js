@@ -3,7 +3,7 @@ const ProjectDatas = {
     title: "가챠카챠",
     image: "/img/portfolio/1.png",
     content: "쇼핑몰 관리자페이지",
-    badge: "학원",
+    badge: "Team",
     badgeColor: "#2196F3",
     gitUrls: [
       { type: "Github", url: "https://github.com/jolennon77/gachakacha" },
@@ -25,7 +25,7 @@ const ProjectDatas = {
     title: "레트로 플래닛",
     image: "/img/portfolio/2.png",
     content: "레트로 컨셉 SNS",
-    badge: "개인",
+    badge: "Side",
     badgeColor: "#FF9800",
     gitUrls: [
       { type: "Github", url: "https://github.com/jolennon77/RetroPlanet" },
@@ -47,7 +47,7 @@ const ProjectDatas = {
     title: "룩복",
     image: "/img/portfolio/3.png",
     content: "날씨기반 의상추천",
-    badge: "개인",
+    badge: "Side",
     badgeColor: "#FF9800",
     gitUrls: [
       { type: "Github_Frontend", url: "https://github.com/jolennon77/lookbok" },
@@ -64,13 +64,13 @@ const ProjectDatas = {
     collaborations: ["Notion","Git"],
     duration: "1 months",
     team: "1 members",
-    youtube: "https://www.youtube.com/embed/11cta61wi0g?si=4-Gj0rFj3zXy4Su-"
+    youtube: "https://www.youtube.com/embed/V31cO-aG4_I?si=43uBFdjBXD1QMdqz"
   },
   project4: {
     title: "야숨",
     image: "/img/portfolio/4.png",
     content: "날씨기반 캠핑장추천",
-    badge: "학원",
+    badge: "Team",
     badgeColor: "#2196F3",
     gitUrls: [
       { type: "Frontend", url: "https://github.com/Breath-of-the-Wild/Breath-of-the-Wild_fe" },
@@ -93,7 +93,7 @@ const ProjectDatas = {
     title: "개인 홈페이지",
     image: "/img/portfolio/5.png",
     content: "개인 홈페이지",
-    badge: "개인",
+    badge: "Side",
     badgeColor: "#FF9800",
     gitUrls: [
       { type: "Github", url: "https://github.com/jolennon77/jolennon77.github.io" },
@@ -109,13 +109,13 @@ const ProjectDatas = {
     collaborations: ["Git"],
     duration: "1 month",
     team: "1 member",
-    youtube: "https://www.youtube.com/embed/11cta61wi0g?si=4-Gj0rFj3zXy4Su-"
+    youtube: "https://www.youtube.com/embed/X2eS7LjhHzQ?si=B0LpnpRWooTblt04"
   },
   project6: {
     title: "슬리슬리",
     image: "/img/portfolio/6.png",
     content: "WebRTC 활용 웹어플리케이션",
-    badge: "학원",
+    badge: "Team",
     badgeColor: "#2196F3",
     gitUrls: [
       { type: "Frontend", url: "https://github.com/dmsp0/slisli_frontend" },
@@ -132,7 +132,7 @@ const ProjectDatas = {
     collaborations: ["Notion","Git"],
     duration: "1 months",
     team: "5 members",
-    youtube: "https://www.youtube.com/embed/IWkERpy9uFo?si=M1d8kDSh8WcSOclP"
+    youtube: "https://www.youtube.com/embed/IWkERpy9uFo?si=mfdsRtT3HHqphQRX"
   },
 };
 
