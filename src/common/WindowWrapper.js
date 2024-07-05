@@ -18,6 +18,7 @@ const WindowContainer = styled.div`
   flex-direction: column;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  z-index: 15;
   @media (max-width: 768px) {
     top: 0;
     width: 100%;

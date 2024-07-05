@@ -18,6 +18,7 @@ const DockWrapper = styled.div`
   border-radius: 25px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
+  z-index: 20;
   @media (max-width: 768px) {
     padding: 10px 0;
     bottom: 10px;

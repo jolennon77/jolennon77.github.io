@@ -25,4 +25,17 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  /* position: relative; */
+  z-index: 1;
+}
+
+.WindowWrapper {
+  position: relative;
+  z-index: 10;
+}
+
+
+.EasterEggVideo {
+  position: relative;
+  z-index: 15;
 }

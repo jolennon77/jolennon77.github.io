@@ -41,11 +41,11 @@ const InfoCard = styled(Card)`
   animation: ${fadeIn} 1s ease-out;
 `;
 
-const BadgeContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-`;
+// const BadgeContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 10px;
+// `;
 
 const CardHeader = styled.div`
   margin-top: 10px;
