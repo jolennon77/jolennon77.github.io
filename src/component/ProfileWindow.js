@@ -313,7 +313,7 @@ const ProfileWindow = () => {
                     <Typography variant="body1" component="p">
                       <SiNotion /> Notion :{" "}
                       <StyledLink
-                        href="https://www.notion.so/Hi-I-m-HJ-25a87b9cce5046f5a44f107e4212c22d"
+                        href="https://amplified-tabletop-852.notion.site/c196df21558e4f99886c8628794a8417?pvs=4"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

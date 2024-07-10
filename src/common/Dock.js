@@ -102,7 +102,7 @@ const icons = [
   { src: portfolio, alt: 'Portfolio', window: 'portfolio' },
   { src: github, alt: 'GitHub', url: 'https://github.com/jolennon77' },
   { src: velog, alt: 'Blog', url: 'https://velog.io/@jolennon/posts' },
-  { src: notion, alt: 'Notion', url: 'https://www.notion.so/Hi-I-m-HJ-25a87b9cce5046f5a44f107e4212c22d' },
+  { src: notion, alt: 'Notion', url: 'https://amplified-tabletop-852.notion.site/c196df21558e4f99886c8628794a8417?pvs=4' },
 ];
 
 const Dock = () => {

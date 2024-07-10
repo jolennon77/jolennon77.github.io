@@ -71,7 +71,7 @@ const AppContent = () => {
           <Dock />
           <div className="IconWrapper">
             <DesktopIcon
-                icon="/easterEgg/MT.png"
+                icon="/easterEgg/Mutsuki_Dance.png"
                 label="Mutsuki Dance"
                 onClick={() => handleIconClick('easterEgg1')}
             />
@@ -79,6 +79,16 @@ const AppContent = () => {
                 icon="/easterEgg/toki.png"
                 label="Pyon Pyon"
                 onClick={() => handleIconClick('easterEgg2')}
+            />
+            <DesktopIcon
+                icon="/easterEgg/asuna.png"
+                label="Screen Cleaning"
+                onClick={() => handleIconClick('easterEgg3')}
+            />
+            <DesktopIcon
+                icon="/easterEgg/aris.png"
+                label="Aris Dance"
+                onClick={() => handleIconClick('easterEgg4')}
             />
           </div>
           {activeEasterEgg === 'easterEgg1' && (
@@ -91,6 +101,18 @@ const AppContent = () => {
               <EasterEggVideo
                   onClose={handleCloseEasterEgg}
                   videoSrc="/easterEgg/toki.mp4"
+              />
+          )}
+          {activeEasterEgg === 'easterEgg3' && (
+              <EasterEggVideo
+                  onClose={handleCloseEasterEgg}
+                  videoSrc="/easterEgg/asuna.mp4"
+              />
+          )}
+          {activeEasterEgg === 'easterEgg4' && (
+              <EasterEggVideo
+                  onClose={handleCloseEasterEgg}
+                  videoSrc="/easterEgg/aris.mp4"
               />
           )}
         </div>
