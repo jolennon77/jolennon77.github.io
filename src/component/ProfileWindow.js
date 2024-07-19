@@ -483,22 +483,7 @@ const ProfileWindow = () => {
                       💬 Too Much Information
                     </Typography>
                     <br />
-                    <HighlightedText>
-                      Q. 왜 개발자가 하고 싶다고 생각하셨나요?
-                    </HighlightedText>
-                    <AnswerText>
-                      A. 어렸을 때부터 레고나 프라모델등 무언가를 만드는 것을
-                      좋아했습니다. 또한 이전 근무지에서 제가 엑셀로 만든
-                      매크로나 자동화 시트를 팀원들이 사용하는 것을 보며
-                      뿌듯함을 느꼈습니다. 그리고 함께 협업하던 개발자분들이
-                      저희가 요청한 기능들을 개선하 고 추가하는 모습을 보면서
-                      멋있다고 생각하게 되었습니다. 이러한 경험을 통해 저도
-                      누군가에게 도움이 되는 것을 만들어주는 개발자가 되고
-                      싶다는 결심을 하게 되었습니다.
-                    </AnswerText>
-                    <br />
-                    <br />
-                    <br />
+                  
                     <HighlightedText>Q. 성격의 장단점?</HighlightedText>
                     <AnswerText>
                       A. 장점은 적응력이라고 생각합니다. 새로운 사람들과도 잘
