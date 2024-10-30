@@ -133,7 +133,7 @@ const ProfileWindow = () => {
               <LargeProfileImage alt="조현진" src="/img/profileimg.jpeg" />
               <ProfileInfo>
                 <HeroText variant={isMobile ? "h4" : "h3"}>조현진</HeroText>
-                <strong>Full Stack Cloud Native Developer</strong>
+                {/* <strong>Full Stack Cloud Native Developer</strong> */}
                 <Typography variant="body1" component="p">
                   <strong>Name : </strong> 조현진
                 </Typography>
@@ -159,31 +159,33 @@ const ProfileWindow = () => {
                       🧑🏻‍💻 Introduction
                     </Typography>
                     <Typography variant="h5" component="p">
-                      "배우고 도전하는, 나는 신입 개발자!"
+                      {/* "배우고 도전하는, 나는 신입 개발자!" */}
+                      "겨우 밥먹고 사는 코딩 조무사!"
                     </Typography>
                     <Typography variant="body1" component="p">
                       <li>
-                        완벽할 수 없기에 더 노력하고 개선하려는 신입 백엔드
-                        개발자 조현진입니다.
+                        응애
+                        {/* 완벽할 수 없기에 더 노력하고 개선하려는 신입 백엔드
+                        개발자 조현진입니다. */}
                       </li>
-                      <li>
+                      {/* <li>
                         React와 Spring Boot로 웹 애플리케이션을 개발하고,
                         Nginx와 Docker를 이용해 배포해본 경험이 있습니다.
                       </li>
                       <li>
                         데이터를 기반으로 사용자가 필요한 정보를 제공해주는
                         서비스를 만드는 개발자가 되는 것이 목표입니다.{" "}
-                      </li>
+                      </li> */}
                     </Typography>
                   </CardContent>
                 </InfoCard>
               </Grid>
 
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <InfoCard>
                   <CardContent>
                     <Typography variant="h5" component="h3" gutterBottom>
-                      Technical Skills
+                      Technical Skills // 이런거 다 의미없다 기본이나 잘하자
                     </Typography>
                     <Grid container spacing={2}>
                       {Object.keys(TechChipDatas).map((section, index) => (
@@ -208,7 +210,7 @@ const ProfileWindow = () => {
                     </Grid>
                   </CardContent>
                 </InfoCard>
-              </Grid>
+              </Grid> */}
 
               <Grid item xs={12}>
                 <InfoCard>
@@ -323,7 +325,7 @@ const ProfileWindow = () => {
                   </CardContent>
                 </InfoCard>
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <InfoCard>
                   <CardContent>
                     <Typography variant="h5" component="h3" gutterBottom>
@@ -474,9 +476,9 @@ const ProfileWindow = () => {
                     </AnswerText>
                   </CardContent>
                 </InfoCard>
-              </Grid>
+              </Grid> */}
 
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <InfoCard>
                   <CardContent>
                     <Typography variant="h5" component="h3" gutterBottom>
@@ -576,7 +578,24 @@ const ProfileWindow = () => {
                     </AnswerText>
                   </CardContent>
                 </InfoCard>
+              </Grid> */}
+               <Grid item xs={12}>
+                <InfoCard>
+                  <CardContent>
+                    <Typography variant="h5" component="h3" gutterBottom>
+                      💬 Too Much Information
+                    </Typography>
+                    <br />
+                    <HighlightedText>
+                      Q. 좋아하는 사자성어, 좌우명 등
+                    </HighlightedText>
+                    <AnswerText>
+                      A. 마음을 불태워라.- 렌고쿠 쿄쥬로 향년 20세
+                    </AnswerText>
+                  </CardContent>
+                </InfoCard>
               </Grid>
+                 　
             </Grid>
           </ContentSection>
         </MainContentSection>
